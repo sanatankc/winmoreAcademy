@@ -1,0 +1,38 @@
+---
+import DeckCard from "./DeckCardWithGalleryCaption.astro";
+import Text from "./system/Text.astro";
+import bulletStarGreen from '../images/bulletStarGreen.svg'
+import GASupdate1 from '../images/campus/gas/updates/1.jpeg'
+import GASupdate2 from '../images/campus/gas/updates/2.jpeg'
+import { Image } from "astro:assets";
+const { currentLink, campusName, data } = Astro.props
+
+---
+<div
+  class="mt-[60px] w-full flex flex-col items-center px-[44px] max-md:px-[0px] gap-20 max-md:gap-16"
+>
+  <div class="flex flex-row max-md:flex-col w-full gap-20 justify-center">
+    <DeckCard
+      deckContainerClass="relative left-2 max-md:-left-2"
+      cardHoverStyle={["border-accent"]}
+      gallery={data.gallery}
+      id="campus-facility1"
+    />
+    <div class="flex flex-col items-start text-left gap-6 max-md:px-8 max-md:w-full max-w-[650px]">
+      <!-- <Text type="h3" class="text-accent2">Top-Notch Facilities</Text> -->
+      <div class="py-2" />
+      <Text type="base" class="font-semibold">{data.title}</Text>
+      {data.description.map((item) => (
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStarGreen} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="regular" class="font-bold ml-[10px]">{item}</Text>
+        </div> 
+      ))}
+      <div class="cursor-pointer" data-modal-target="campus-facility1" data-target-deck="deck-campus-facility1">
+        <Text type="regular" class='underline uppercase text-green-600 tracking-wide font-bold'>VIEW Facilities</Text>
+      </div>
+    </div>
+  </div>
+</div>

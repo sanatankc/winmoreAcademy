@@ -1,0 +1,136 @@
+---
+import a from '../../images/campus/gas/a.png'
+import b from '../../images/campus/gas/b.png'
+import c from '../../images/campus/gas/c.png'
+import d from '../../images/campus/gas/d.png'
+import Repeat from '../utils/Repeat.astro';
+
+interface Props {
+  images: []
+}
+
+const {images = []} = Astro.props
+---
+<article class="wrapper max-md:gap-0">
+  <div class="marquee max-md:animate-none">
+    <Repeat n={2} mobile={true}>
+      <div class="marquee__group max-md:!animate-none max-md:p-4 max-md:pb-0 max-md:!overflow-x-scroll max-md:!w-full max-md:!justify-start" style={{ scrollSnapType: 'x mandatory', }}>
+        {images.map(image => (
+          <div class='bg-cover bg-center bg-no-repeat w-[480px] h-[376px] max-md:w-[250px] max-md:h-[196px] flex-shrink-0' style={{ backgroundImage: `url("${image.image}")` }} />
+        ))}
+      </div>
+    </Repeat>
+  </div>
+</article>
+
+<style>
+  :root {
+  --color-text: navy;
+  --color-bg: papayawhip;
+  --color-bg-accent: #ecdcc0;
+  --size: clamp(10rem, 1rem + 40vmin, 30rem);
+  --gap: calc(var(--size) / 14);
+  --duration: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  /* mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  ); */
+}
+
+.marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll-x var(--duration) linear infinite;
+}
+
+/* .marquee__group:hover {
+  animation-play-state: paused;
+}
+
+.marquee__group:hover .marquee__group {
+  animation-play-state: paused;
+} */
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__group {
+    animation-play-state: paused;
+  }
+}
+.marquee--reverse .marquee__group {
+  animation-direction: reverse;
+  animation-delay: -3s;
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+
+/* Element styles */
+.marquee div {
+  border-radius: 0.5rem;
+}
+
+.marquee--vertical div {
+  aspect-ratio: 1;
+  width: calc(var(--size) / 1.5);
+  padding: calc(var(--size) / 6);
+}
+
+/* Parent wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: auto;
+  max-width: 100vw;
+}
+
+.wrapper--vertical {
+  flex-direction: row;
+  height: 100vh;
+}
+
+</style>
+
+
+<script>
+  // const marquee = document.querySelectorAll('.marquee__group') as NodeListOf<HTMLElement>
+
+  // marquee.forEach((el) => {
+  //   el.addEventListener('mouseenter', () => {
+  //     const elements = Array.from(el?.parentNode?.children)
+  //     console.log(elements)
+  //     elements.forEach((el) => {
+  //       el.style.animationPlayState = 'paused'
+  //     })
+  //   })
+  //   el.addEventListener('mouseleave', () => {
+  //     const elements = Array.from(el?.parentNode?.children)
+  //     elements.forEach((el) => {
+  //       el.style.animationPlayState = 'running'
+  //     })
+  //   })
+  // })
+</script>

@@ -1,0 +1,264 @@
+html {
+  color: black;
+  font-family: 'Circular Std', sans-serif;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-Black.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-Bold.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-BoldItalic.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-BlackItalic.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-Light.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-LightItalic.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-Medium.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-MediumItalic.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-Regular.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-RegularItalic.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-SemiboldItalic.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/tiempos/TiemposHeadline-Semibold.woff2') format('woff2'),
+      url('/fonts/tiempos/TiemposHeadline-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-BoldItalic.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-BlackItalic.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-BookItalic.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-BookItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-Bold.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-MediumItalic.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularSpotifyText-Light.woff2') format('woff2'),
+      url('/fonts/circular/CircularSpotifyText-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularSpotifyText-LightItalic.woff2') format('woff2'),
+      url('/fonts/circular/CircularSpotifyText-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-Book.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-Black.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular/CircularStd-Medium.woff2') format('woff2'),
+      url('/fonts/circular/CircularStd-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+.no-scrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .main-container::-webkit-scrollbar {
+    width: 1px !important;
+
+  }
+  ::-webkit-scrollbar {
+    width: 1px;
+  }
+  .main-container {
+    overflow-y: overlay;
+  }
+}
+ 
+.main-container::-webkit-scrollbar {
+  width: 18px;
+}
+
+.main-container::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.ribbon:before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  animation: shine 2.5s ease-out infinite;
+  height: 100%;
+  background-image: linear-gradient(
+      120deg,
+      rgba(255,255,255, 0) 30%,
+      rgba(255,255,255, .8),
+      rgba(255,255,255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+  /* animation: none; Animation */
+}
+
+@keyframes shine {
+  0% {left: -100px}
+  60% {left: 100%}
+  100% {left: 100%}
+}

@@ -1,0 +1,38 @@
+---
+import Collapsible from "./admissions/Collapsible.astro"
+import Text from "./system/Text.astro";
+
+const faqs = [
+    {
+        "question": "Which curriculum does the National Centre For Excellence follow?",
+        "answer": "We are affiliated with the CBSE board."
+    },
+    {
+        "question": "What is the student-to-teacher ratio at NCFE?",
+        "answer": "We maintain a ratio of 25:1."
+    },
+    {
+        "question": "What is the entry level for admissions at the National Centre for Excellence?",
+        "answer": 'Admissions begin from the age of 2 years and 7 months to 3 years (calendar year). <br/><br/> <span class="font-bold">Note:</span> Parents or guardians requesting enrollment for a child falling within a 2-3 month range outside our specified age criteria will be required to complete an undertaking form at the school. This form acknowledges and accepts the conditions related to age variation enrollment.'
+    },
+    {
+        "question": "What is the appropriate age for pre-primary classes?",
+        "answer": 'For pre-primary, Level 1, the age range is 2 years and 7 months to 3 years; for Level 2, it\'s 3 years and 7 months to 4 years; and for Level 3, it\'s 4 years and 7 months to 5 years. <br/><br/> <span class="font-bold">Note:</span> Parents or guardians requesting enrollment for a child falling within a 2-3 month range outside our specified age criteria will be required to complete an undertaking form at the school. This form acknowledges and accepts the conditions related to age variation enrollment.'
+    },
+    {
+        "question": "Is there an entrance exam for admissions?",
+        "answer": "At the National Centre for Excellence, there is an entrance exam for classes Grade 3 and above."
+    },
+    {
+        "question": "What second and third languages are offered at the National Centre for Excellence?",
+        "answer": "From Grade 1 to Grade 10, the second languages offered are Kannada, Hindi, and Sanskrit. The third languages, offered from Grade 5 to Grade 8, are Kannada, Hindi, Sanskrit, and French. No changes to the chosen language will be permitted."
+    }
+]
+---
+<div class="flex flex-col items-center gap-5 ">
+  {faqs.map(({ question, answer }) => (
+    <Collapsible title={question} titleClass='font-sans font-bold text-xl max-md:text-lg' class='mb-5' collapseGroup='collapsible' plusButtonClass="w-[35px] h-[35px] ml-1">
+      <Text type={'regular'} set:html={answer} class="[&>a]:underline [&>a]:text-blue-700"></Text>
+    </Collapsible>
+  ))}
+</div>

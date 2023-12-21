@@ -1,0 +1,125 @@
+---
+import Text from "./system/Text.astro";
+import { getEntries, getEntry, type CollectionEntry } from 'astro:content';
+const { data } = await getEntry('home', 'home') as CollectionEntry<'home'>
+const title = data.title
+
+const slides = data.heroImages.map(({ image_desktop, image_mobile, position = 'top' }, i) => {
+  const slide = image_desktop
+  if (!image_mobile) {
+    return {
+      slide,
+      position,
+      picture: false,
+    }
+  }
+  const responsiveSlide = [
+    { src: image_desktop, media: "(min-width: 768px)" },
+    { src: image_mobile, media: "(max-width: 768px)" },
+  ]
+  return {
+    slide: responsiveSlide,
+    position,
+    picture: true,
+  }
+}).reverse()
+
+---
+
+<div class="h-screen w-full bg-cover bg-top relative bg-black flex flex-col">
+  <div class="h-[96px] w-full bg-black"></div>
+
+  <div class="relative w-full h-full">
+    {
+      slides.map(({ slide, position, picture }, i) =>
+        picture ? (
+          <picture
+            class:list={[
+              "slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover",
+              i === 0 ? "opacity-1" : "opacity-0",
+            ]}
+            style={{
+              transition: "1s all ease-in-out",
+              backgroundPosition: position,
+            }}
+          >
+            {slide.map(({ src, media }) => (
+              <source srcset={src} media={media} class="w-full h-full object-cover" style={{
+                objectPosition: position
+              }} />
+            ))}
+            <img src={slide[0]} alt="slide-img" class="w-full h-full object-cover" style={{
+              objectPosition: position
+            }} />
+          </picture>
+        ) : (
+          <div
+            class:list={[
+              "slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover",
+              i === 0 ? "opacity-1" : "opacity-0",
+            ]}
+            style={{
+              backgroundImage: `url("${slide}")`,
+              transition: "1s all ease-in-out",
+              backgroundPosition: position,
+            }}
+          />
+        )
+      )
+    }
+    <div class="relative z-50 flex flex-col h-full">
+      <div
+        class="h-full absolute bottom-0 left-0 flex w-full items-end max-md:px-6 max-md:py-2 slideshow-overlay px-16 py-3"
+      >
+        <Text type="h3" class="text-center max-md:text-left pb-0">
+          {title}
+        </Text>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slideshowItems = Array.from(
+    document.querySelectorAll<HTMLElement>(".slideshow-item")
+  );
+  let slideshowIndex = 0;
+
+  function moveSlides(items: Array<HTMLElement>) {
+    items.forEach((item, i) => {
+      // console.log(i, slideshowIndex)
+      if (i === slideshowIndex) {
+        item.style.opacity = "1";
+        return;
+      } else {
+        item.style.opacity = "0";
+      }
+    });
+    slideshowIndex = (slideshowIndex + 1) % items.length;
+  }
+
+  moveSlides(slideshowItems);
+  setInterval(() => {
+    moveSlides(slideshowItems);
+  }, 3000);
+</script>
+
+<style>
+  .slideshow-overlay {
+    background: linear-gradient(
+      102deg,
+      rgba(0, 0, 0, 0.8) 5%,
+      rgba(0, 0, 0, 0) 96.35%
+    );
+  }
+
+  @media screen and (max-width: 768px) {
+    .slideshow-overlay {
+      background: linear-gradient(
+        16deg,
+        rgb(0 0 0 / 90%) 5%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+  }
+</style>

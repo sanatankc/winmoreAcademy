@@ -1,0 +1,51 @@
+---
+import MarqueeContent from './marqueeContent.astro'
+
+const { class: className } = Astro.props
+---
+
+<div class:list={["marquee bg-black py-4 relative", className]}>
+  <ul class="marquee__content items-center">
+   <MarqueeContent />
+   <MarqueeContent />
+   <MarqueeContent />
+  </ul>
+  <!-- Mirrors the content above -->
+  <ul class="marquee__content items-center" aria-hidden="true">
+    <MarqueeContent />
+    <MarqueeContent />
+    <MarqueeContent />
+  </ul>
+</div>
+
+
+<style>
+.marquee {
+  --gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  /* gap: 2rem; */
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  /* justify-content: space-around; */
+  min-width: 100%;
+  gap: var(--gap);
+  animation: scroll 20s linear infinite reverse;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+    /* opacity: 1; */
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    /* opacity: 0; */
+  }
+}
+
+</style>

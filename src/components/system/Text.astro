@@ -1,0 +1,146 @@
+---
+
+interface Props {
+  type: 'h1' | 'h2' | 'h3' | 'h4' | 'base' | 'lg' | 'regular' | 'sm' | 'xs' | 'subtitle'
+  class?: string,
+  style?: {}
+}
+
+const { type = 'base', class: className, style = {}, ...props } = Astro.props
+
+---
+
+{type === 'h1' && (
+  <h1
+    class:list={[
+      "font-display font-[700] text-5xl tracking-tight max-md:text-[2rem]", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </h1>
+)}
+{type === 'h2' && (
+  <h2
+    class:list={[
+      "font-display font-[700] text-5xl tracking-tight max-md:text-[2rem]", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </h2>
+)}
+{type === 'h3' && (
+  <h3
+    class:list={[
+      "text-[2.5rem] font-[700] tracking-tight font-display max-md:text-2xl", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </h3>
+)}
+{type === 'h4' && (
+  <h2
+    class:list={[
+      "text-2xl tracking-tight font-display", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </h2>
+)}
+
+{type === 'lg' && (
+  <div
+    class:list={[
+      "text-2xl font-bold tracking-tight", 
+      className
+    ]}
+    class="max-md:text-lg"
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+)}
+{type === 'base' && (
+  <div
+    class:list={[
+      "text-xl max-md:text-base font-[400]", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </div>
+)}
+{
+  type === 'regular' && (
+  <div
+    class:list={[
+      "text-lg max-md:text-base", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+  )
+}
+
+{type === 'sm' && (
+  <div
+    class:list={[
+      "text-base", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+)}
+
+{type === 'xs' && (
+  <div
+    class:list={[
+      "text-base", 
+      className
+    ]}
+    style={style}
+    {...props}
+  >
+    <slot />
+  </div>
+)}
+
+{type === 'subtitle' && (
+    <div
+      class:list={[
+        "text-xl max-md:text-base uppercase text-accent2 font-bold",
+        className
+      ]}
+      style={{ 
+        letterSpacing: '0.1em', 
+        ...style
+      }}
+      {...props}
+    >
+      <slot />
+    </div>
+)}

@@ -1,0 +1,160 @@
+---
+import Text from '../../system/Text.astro'
+import newsUpdateBG from '../../../images/newsUpdateBG.png'
+import Card from './Card.astro'
+import jasonResult from '../../../images/results/jason.png'
+import hasiniResult from '../../../images/results/hasini.png'
+import vivekResult from '../../../images/results/vivek.png'
+import shreyanshResult from '../../../images/results/shreyansh.png'
+import deepthiReslut from '../../../images/results/Deepthi.png'
+import suhaniResult from '../../../images/results/suhani.png'
+import arrow from '../../../icons/arrow.svg'
+import { Image } from 'astro:assets';
+
+// const news = Array.from({ length: 6 }, (_, i) => i).map((i) => ({
+//   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+//   image: newsUpdateBG,
+// }))
+
+
+const resultImages = [
+  // jasonResult,
+  hasiniResult,
+  suhaniResult, 
+  vivekResult,
+  // shreyanshResult,
+  // deepthiReslut
+]
+---
+
+<div 
+  style={{
+    background: 'linear-gradient(180deg, #000000 0%, #142C1E 100%)',
+  }}
+  class="flex flex-col items-center py-20 max-md:py-12"
+>
+  <div class='flex flex-row w-full items-center max-md:ml-0 max-md:px-6 box-border daisy daisy-2'>
+    <div class='flex-1 bg-white/30 mr-6 max-md:mr-4 max-md:hidden' style={{ height: '1px' }}></div>
+    <Text type={"subtitle"} class='text-center max-md:w-[100%] text-white' style={{ opacity: 0.8 }}> Our Results:<br class="hidden max-md:block" /> Sarjapur & Whitefield</Text>
+    <div class='flex-1 bg-white/30 ml-6 max-md:ml-4 max-md:hidden' style={{ height: '1px' }}></div>
+  </div>
+  <Text type={"base"} class='text-center text-white/80 mb-6 mt-6 max-md:mb-5 max-md:mt-3 max-md:w-[90%] daisy daisy-3 daisy-y-10'>  Glentree Academy epitomizes academic brilliance, maintaining our track record of Grade 10 Results.</Text>
+  <div class="w-full relative mt-8">
+    <div class="w-screen absolute h-full top-0 left-0 z-50 flex flex-row items-center p-10 justify-between pointer-events-none">
+      <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="prev-button">
+        <Image src={arrow} alt="previous button" class="w-full h-full -scale-100" />
+      </div>
+      <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="next-button">
+        <Image src={arrow} alt="previous button" class="w-full h-full" />
+      </div>
+    </div>
+    <div id="scroll-container" class="h-scroll w-screen flex flex-row h-min overflow-scroll no-scrollbar scroll-snap-news-carousel px-3 mb-0" style={{
+      overflowX: 'scroll',
+      overflowY: 'hidden',
+      scrollSnapType: 'x mandatory',
+    }}>
+      {resultImages.map((image, index) => (
+        <Card title={""} image={image} class={`daisy daisy-${index + 1} daisy-y-1 daisy-debug m-auto scroll-card`}  />
+      ))}
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const prevButton = document.querySelector('#prev-button')
+  const nextButton = document.querySelector('#next-button')
+
+  const scrollContainer = document.querySelector('#scroll-container')
+
+
+  if (prevButton && nextButton && scrollContainer) {
+    const scroll = (scrollOffset: number) => {
+      scrollContainer.scrollBy({
+        top: 0,
+        left: scrollOffset,
+        behavior: 'smooth'
+      })
+    }
+  
+    const scrollOffset = document.querySelector('.scroll-card')?.offsetWidth
+  
+    prevButton.addEventListener('click', () => {
+      scroll(scrollOffset * -1)
+    })
+  
+    nextButton.addEventListener('click', () => {
+      scroll(scrollOffset)
+    })
+  }
+</script>
+
+
+<style>
+  /* .h-scroll {
+    cursor: grab;
+  } */
+</style>
+
+<script>
+//   const hScroll = document.querySelector('.h-scroll') as HTMLDivElement
+//   function detectTrackPad(e) {
+//   var isTrackpad = false;
+//   if (e.wheelDeltaY) {
+//     if (e.wheelDeltaY === (e.deltaY * -3)) {
+//       isTrackpad = true;
+//     }
+//   }
+//   else if (e.deltaMode === 0) {
+//     isTrackpad = true;
+//   }
+// }
+
+
+//   hScroll.addEventListener("wheel", (evt) => {
+//       if (detectTrackPad(evt)) {
+//         if (hScroll.scrollLeft === 0 && evt.deltaY < 5) return;
+//         if (hScroll.scrollLeft === hScroll.scrollWidth - hScroll.clientWidth && evt.deltaY > 5) return;
+//         evt.preventDefault();
+//         hScroll.scrollLeft += evt.deltaY;
+//       }
+//   });
+
+
+  // let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+  // const mouseMoveHandler = function (e) {
+
+  //   // How far the mouse has been moved
+  //   const dx = e.clientX - pos.x;
+  //   const dy = e.clientY - pos.y;
+
+  //   // Scroll the element
+  //   hScroll.scrollTop = pos.top - dy;
+  //   hScroll.scrollLeft = pos.left  - dx;
+  // }
+
+  // const mouseUpHandler = function () {
+  //   document.removeEventListener('mousemove', mouseMoveHandler);
+  //   document.removeEventListener('mouseup', mouseUpHandler);
+
+  //   hScroll.style.cursor = 'grab';
+  //   hScroll.style.removeProperty('user-select');
+  // };
+
+  // const mouseDownHandler = function (e) {
+  //   hScroll.style.cursor = 'grabbing';
+  //   hScroll.style.userSelect = 'none';
+  //   pos = {
+  //       // The current scroll
+  //       left: hScroll.scrollLeft,
+  //       top: hScroll.scrollTop,
+  //       // Get the current mouse position
+  //       x: e.clientX,
+  //       y: e.clientY,
+  //   };
+  //   hScroll.addEventListener('mouseup', mouseUpHandler);
+  //   hScroll.addEventListener('mousemove', mouseMoveHandler);
+  // };
+  // hScroll.addEventListener('mousedown', mouseDownHandler);
+</script>

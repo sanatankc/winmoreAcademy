@@ -1,0 +1,22 @@
+---
+
+import { marked } from 'marked';
+// import * as DOMPurify from 'dompurify';
+
+
+let {data} = Astro.props
+data = data.map((item) => {
+    item.disclosure = marked.parse(item.disclosure).trim()
+    return item
+})
+
+---
+<div class="max-w-[800px] w-[90%] bg-white border border-gray-500 rounded-lg mt-10">
+    {Object.keys(data).map((key) => (
+        <div class='flex flex-row w-full border-b border-gray-500'>
+            <div class={"p-4 flex-1 border-r border-gray-500"}>{data[key].title}</div>
+            <div class={"p-4 flex-1 [&>p>a]:text-blue-700 [&>p>a]:underline" + (data[key].type === 'head' ? 'font-bold' : '')} set:html={data[key].disclosure}>
+            </div>
+        </div>
+    ))}
+</div>

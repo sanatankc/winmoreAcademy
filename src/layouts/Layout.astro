@@ -1,0 +1,136 @@
+---
+const { title = 'Best CBSE School in Bangalore | NCFE School' } = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content="The National Centre For Excellence, a leading CBSE school in Bangalore,India. Join us in nurturing your child's future since 17 years.">
+
+		<meta name="keywords" content="national centre for excellence, the best school in Bangalore, CBSE School, school, private school, NCFE, CBSE schools near me, Best school in cv raman nagar, Best school in indiranagar, Best school in domlur, Best school in vignan nagar, Best school in jeevan bhima nagar, Best school in malleshpalya, Best school in kaggadaspura,">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEL743GRSY"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'AW-10834077166');
+
+			function gtag_report_conversion(url) {
+			var callback = function () {
+				if (typeof(url) != 'undefined') {
+					window.location = url;
+				}
+			};
+			gtag('event', 'conversion', {
+					'send_to': 'AW-10834077166/wZAsCLmQ8_4YEO7Li64o',
+					'event_callback': callback
+			});
+			return false;
+		}
+		window.gtag_report_conversion = gtag_report_conversion
+		</script>
+
+		<script src="https://cdnjs.com/libraries/bodymovin" type="text/javascript"></script>
+
+
+<!-- Event snippet for Admission Form Submitted conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+
+	</head>
+	<body>
+		<slot />
+
+		<!-- <script src="https://cdn.pagesense.io/js/vijaykirangroup/e90f86b6a75d4d179ca5d3f6b08506af.js"></script> -->
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+</style>
+
+
+<script>
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+	});
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const scrollArea = document.querySelector("#scroll-area")
+		if (!scrollArea) return
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				const isIntersecting = (
+					entry.isIntersecting
+				) || entry.target.classList.contains('daisy-fixed')
+				if (isIntersecting) {
+					entry.target.classList.add('daisy-show')
+				}
+			})
+		}, {
+			root: scrollArea,
+		})
+		
+		const hiddenElements = document.querySelectorAll('.daisy')
+		hiddenElements.forEach(element => {
+			observer.observe(element)
+		})
+
+		const whatsAppButton : HTMLElement = document.getElementById('whatsapp-btn') as HTMLElement
+
+		document.addEventListener('scroll', (e) => {
+
+			if (whatsAppButton) {
+				if (window.scrollY > 100) {
+					whatsAppButton?.classList.add('opacity-1')
+					whatsAppButton?.classList.remove('opacity-0')
+				} else {
+					whatsAppButton?.classList.remove('opacity-1')
+					whatsAppButton?.classList.add('opacity-0')
+				}
+			}
+		})
+		
+		scrollArea.addEventListener('scroll', (e) => {
+			if (whatsAppButton) {
+ 				if (scrollArea?.scrollTop > 100) {
+					whatsAppButton?.classList.add('opacity-1')
+					whatsAppButton?.classList.remove('opacity-0')
+				} else {
+					whatsAppButton?.classList.remove('opacity-1')
+					whatsAppButton?.classList.add('opacity-0')
+				}
+			}
+		})
+	})
+</script>
