@@ -5,6 +5,7 @@ import logo from "../images/logo.png";
 import { Image } from "astro:assets";
 
 import PhoneWhite from '../icons/PhoneWhite.svg'
+import PhonePrimary from '../icons/PhonePrimary.svg'
 
 interface Menu {
   title: string;
@@ -105,11 +106,11 @@ const { hideMenu = false, applyNowButtonId = null } = Astro.props
 >
   {hideMenu ? (
     <div class="relative z-10 daisy daisy-fixed daisy-1">
-      <Image src={logo} alt="Glentree's Logo" width={150} />
+      <Image src={logo} alt="Glentree's Logo" width={400} class="w-[210px] max-md:w-[160px]" />
     </div>
   ) : (
     <a href="/" class="relative z-10 daisy daisy-fixed daisy-1">
-      <Image src={logo} alt="Glentree's Logo" width={150} />
+      <Image src={logo} alt="Glentree's Logo" width={400} class="w-[210px] max-md:w-[160px]" />
     </a>
   )}
   {!hideMenu && (
@@ -189,16 +190,34 @@ const { hideMenu = false, applyNowButtonId = null } = Astro.props
   )}
   <div class:list={["flex flex-row items-center relative max-md:hidden", hideMenu && 'max-md:!flex']}>
 
-    {applyNowButtonId && (
-      <div class="w-full h-14 bottom-0 left-0 z-10 flex max-md:hidden items-center justify-center gap-4 mr-8" data-pixel-contact-target>
-        <div 
-          class="w-4 h-4"
-        >
-          <Image src={PhoneWhite} alt="Phone" class="w-full h-full object-cover" />
+    <div class="flex flex-row gap-6 mr-[40px] max-md:hidden">
+      <div class="flex flex-row items-center gap-3">
+        <div>
+          <Image src={PhonePrimary} alt="Phone Icon" width={50} class="w-[18px] h-[18px] max-md:hidden" />
         </div>
-        <Text type="sm" class="text-white">+91 76763 10000</Text>
+        <div>
+          <Text type="xs" class="text-[#231F20] font-bold tracking-[-0.48px]">
+            + 91-91484 49538
+          </Text>
+          <Text type="xs" class="text-[#231F20] font-[400] tracking-[-0.48px]">
+            Jakkur Campus
+          </Text>
+        </div>
       </div>
-    )}
+      <div class="flex flex-row items-center gap-3">
+        <div>
+          <Image src={PhonePrimary} alt="Phone Icon" width={50} class="w-[18px] h-[18px] max-md:hidden" />
+        </div>
+        <div>
+          <Text type="xs" class="text-[#231F20] font-bold tracking-[-0.48px]">
+            + 91-91484 49538
+          </Text>
+          <Text type="xs" class="text-[#231F20] font-[400] tracking-[-0.48px]">
+            Whitefield Campus
+          </Text>
+        </div>
+      </div>
+    </div>
 
     {applyNowButtonId ? (
       <div
@@ -230,6 +249,8 @@ const { hideMenu = false, applyNowButtonId = null } = Astro.props
       </form>
   
     </div>
+
+
     <div
       class="mobileMenu absolute top-0 left-0 w-screen h-screen bg-black flex flex-col pt-20 overflow-scroll"
       class="max-md:visible hidden"

@@ -89,7 +89,7 @@ const faqs = [
       <div class='flex flex-col max-md:h-auto min-h-[100svh] relative'>
         <TopNavigationBar hideMenu applyNowButtonId="register-page-apply-now" />
         <div id="register-form-container-mobile" />
-        <div class="h-[88px] w-full bg-white"></div>
+        <div class="h-[80px] w-full bg-white"></div>
 
         <!-- <div class="bg-yellow p-2 text-center text-black flex flex-row max-md:flex-col justify-center items-center group">
           <Text type='regular' class="font-bold uppercase tracking-widest">Limited-period offer</Text>
@@ -135,20 +135,20 @@ const faqs = [
           <div 
             class="
               absolute w-full h-full top-0 left-0
-              bg-[linear-gradient(183deg,_rgba(0,_66,_29,_0.00)_31.29%,_#000_97.19%)]
+              bg-accent
               hidden
               max-md:block
               z-20
             "
           >
-            <Image src={skyBG} class="object-cover object-center" alt="Sky background" width={800} />
+            <!-- <Image src={skyBG} class="object-cover object-center" alt="Sky background" width={800} /> -->
           </div>
 
           <div class="max-md:p-2 max-md:block hidden"  />
 
           <div class="h-full flex flex-row items-end relative z-20 self-end max-md:self-start max-md:w-full justify-center">
             <div class="flex flex-col items-start mb-10 max-md:mb-2">
-              <Text type="h1" class="text-white leading-[120%]">A New Beginning with <br/>a <span>Promising future</span></Text>
+              <Text type="h1" class="text-white leading-[120%]">A New Beginning with <br/>a <span class="max-md:!text-white">Promising future</span></Text>
               <Text type="lg" class="text-white">Get your child on the part to success</Text>
             </div>
           </div>
@@ -208,31 +208,31 @@ const faqs = [
 
     <Facilities />
 
-        <div class="bg-black p-24 counter-stat">
+        <div class="bg-black p-24 max-md:p-8 counter-stat">
           <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
             <div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
-              <div class="items-stretch flex grow flex-col px-5 max-md:mt-10">
+              <div class="items-stretch flex grow flex-col px-5 max-md:px-0 max-md:mt-0">
                 <Text type='h2' class='text-rose-400'>Experience the Crimson</Text>
-                <Text type='base' class='text-white'>Pan India Presence</Text>
+                <Text type='base' class='text-white max-md:mt-3'>Pan India Presence</Text>
               </div>
             </div>
             <div class="flex flex-col items-stretch w-[67%] ml-5 max-md:w-full max-md:ml-0">
-              <div class="my-auto px-5 max-md:max-w-full max-md:mt-10">
-                <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-                  <div class="flex flex-col items-stretch w-[37%] max-md:w-full max-md:ml-0">
-                    <div class="justify-center items-stretch flex grow flex-col max-md:mt-10">
+              <div class="my-auto px-5 max-md:px-0 max-md:max-w-full max-md:mt-10">
+                <div class="gap-5 flex max-md:w-full max-md:items-stretch max-md:gap-3 max-md:text-center">
+                  <div class="flex flex-col items-stretch w-[37%] max-md:w-[530px] max-md:ml-0">
+                    <div class="justify-center items-center flex grow flex-col max-md:mt-0">
                       <Text type='h1' class='text-white flex flex-row'>0<div class='text-white' data-counter="7">0</div></Text>
                       <Text type='base' class='text-white'>Locations in India</Text>
                     </div>
                   </div>
                   <div class="flex flex-col items-stretch w-[46%] ml-5 max-md:w-full max-md:ml-0">
-                    <div class="justify-center items-stretch flex grow flex-col max-md:mt-10">
+                    <div class="justify-center items-center flex grow flex-col max-md:mt-0">
                       <Text type='h1' class='text-white flex flex-row'><div class='text-white flex flex-row' data-counter="15000">14893</div>+</Text>
                       <Text type='base' class='text-white'>Students</Text>
                     </div>
                   </div>
                   <div class="flex flex-col items-stretch w-[16%] ml-5 max-md:w-full max-md:ml-0">
-                    <div class="justify-center items-stretch flex grow flex-col max-md:mt-10">
+                    <div class="justify-center items-center flex grow flex-col max-md:mt-0">
                       <Text type='h1' class='text-white flex flex-row'><div class='text-white flex flex-row' data-counter="16">9</div></Text>
 
                       <Text type='base' class='text-white'>Schools</Text>

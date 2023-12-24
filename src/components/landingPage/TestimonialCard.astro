@@ -17,7 +17,7 @@ interface TestimonialProps {
 const {image,quote,author,role,ctaText,ctaLink,imageFade=false,className} = Astro.props as TestimonialProps
 ---
 
-<div class=`overflow-hidden mt-l flex flex-row  max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto ${className} max-md:py-0 flex-1`>
+<div class=`overflow-hidden mt-l flex flex-row max-md:items-center  max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto ${className} max-md:py-0 flex-1`>
     <!-- <div class='min-w-[34vw] max-md:w-[100%] max-md:min-h-[136px] bg-cover bg-center rounded-lg' style={{
       backgroundImage: `${imageFade ? 'linear-gradient(90deg, rgba(255, 255, 255, 0) 40.82%, #FFFFFF 95.62%),' : ''} url(${image})`
     }}> -->
@@ -33,7 +33,7 @@ const {image,quote,author,role,ctaText,ctaLink,imageFade=false,className} = Astr
     <div class='flex flex-col justify-around px-6 max-md:px-0 max-md:items-center'>
         <Text
             type={'sm'}
-            class={'max-md:mt-4 !text-[18px] max-md:!text-[16px] font-[400] leading-[140%] text-[#231F20] max-md:w-[80%] max-sm:text-center'}
+            class={'max-md:mt-4 !text-[18px] max-md:!text-[16px] font-[400] leading-[140%] text-[#231F20] max-md:w-[100%] max-sm:text-center'}
         >
             {quote}
         </Text>

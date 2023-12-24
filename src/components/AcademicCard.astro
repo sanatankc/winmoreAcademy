@@ -23,7 +23,7 @@ const {
   overflow-hidden
 ">
   <Image src={image} alt={title} width={700} class="w-full object-cover object-center h-full max-md:h-[300px]" />
-  <div class="hidden max-md:flex flex-col items-center bg-accent py-4">
+  <div class="hidden relative z-20 max-md:flex flex-col items-center bg-accent py-4">
     <Text type="h4" class='bottom-[37px] max-md:text-[20px] left-[20px] text-center transition-all'>
       <div set:html={title}></div>
     </Text>
