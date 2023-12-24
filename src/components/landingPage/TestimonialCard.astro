@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../system/Button.astro";
 import Text from "../system/Text.astro";
 
@@ -6,13 +7,14 @@ interface TestimonialProps {
   image: string;
   quote: string;
   author: string;
+  role: string;
   ctaText: string;
   ctaLink: string;
   imageFade?: boolean;
   className?: string;
 }
 
-const {image,quote,author,ctaText,ctaLink,imageFade=false,className} = Astro.props as TestimonialProps
+const {image,quote,author,role,ctaText,ctaLink,imageFade=false,className} = Astro.props as TestimonialProps
 ---
 
 <div class=`overflow-hidden mt-l flex flex-row  max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto ${className} max-md:py-0 flex-1`>
@@ -20,21 +22,30 @@ const {image,quote,author,ctaText,ctaLink,imageFade=false,className} = Astro.pro
       backgroundImage: `${imageFade ? 'linear-gradient(90deg, rgba(255, 255, 255, 0) 40.82%, #FFFFFF 95.62%),' : ''} url(${image})`
     }}> -->
     <slot>
-      <img  
-        src=`${image.src}`
-        class="object-contain max-h-[200px] rounded-[22px]"
+      <Image  
+        src={image}
+        class="object-contain max-h-[304px]"
+        width={232}
+        height={304}
+        alt={author + " , Parent"}
       />
     </slot>
-    <div class='flex flex-col justify-around px-14 max-md:px-0 max-md:items-center'>
+    <div class='flex flex-col justify-around px-6 max-md:px-0 max-md:items-center'>
         <Text
-            type={'regular'}
-            class={'max-md:mt-4 max-md:w-[80%] max-sm:text-center'}
+            type={'sm'}
+            class={'max-md:mt-4 !text-[18px] max-md:!text-[16px] font-[400] leading-[140%] text-[#231F20] max-md:w-[80%] max-sm:text-center'}
         >
             {quote}
         </Text>
-        <Text type="sm" class="tracking-[1.8px] text-primary uppercase font-bold">
-          {author}
-        </Text>
+        <div>
+          <Text type="sm" class="tracking-normal text-[#231F20] !text-[18px] max-md:!text-[16px] text-primary font-bold">
+            {author}
+          </Text>
+          <div class="pt-2" />
+          <Text type="sm" class="tracking-normal text-[#231F20] !text-[16px] max-md:!text-[16px] text-primary font-[400]">
+            {role}
+          </Text>
+        </div>
      {ctaText &&
       <div data-video-open="0">
         <Button class='mt-4'>

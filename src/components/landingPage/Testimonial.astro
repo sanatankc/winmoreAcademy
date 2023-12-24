@@ -16,14 +16,15 @@ import YoutubeEmbed from '../YoutubeEmbed.astro'
 const testimonials = [
     {
       image: testimonial1,
-      quote: "As a parent, I've seen NCFE become my children's second home, a cornerstone of their journey. Dedicated teachers and management played a vital role in their success. NCFE nurtured their talents and potential.",
-      author: '- Shruti, Parent',
+      quote: "We are parents of Aarav Patil (5th std) and Aayush Patil (1st std). The school's commitment to both offline and virtual classes, vibrant extracurricular activities, and academically competitive syllabus demonstrate its dedication to holistic education",
+      author: 'Rohini and Kishor Pati',
+      role: 'Parents'
     },
     {
       image: testimonial2,
-      quote: "NCFE has played a significant role in the best part of my life. I'm immensely thankful for the support from my teachers and friends, making my journey truly meaningful.",
-      author: '- Asmi Patnaik, Student, Grade X',
-
+      quote: "Grateful for the positive impact on my son, Rohith – his learning attitude and confidence have flourished under your dedicated guidance. The supportive environment and regular communication from the Winmore Academy team are truly appreciated.",
+      author: 'Shwetha',
+      role: 'M/O Rohith S Manegar Class VII'
     },
   ]
 
@@ -44,38 +45,25 @@ const testimonials = [
 
     <Text type={'h2'} class='text-black mt-3 relative max-md:block'>
       <div>
-        Hear From <span class="text-accent">Our Community</span>
+        <span class="text-accent">Our Success </span>Stories
       </div>
-      <div class='w-[84px] h-[67px] absolute -top-16 -left-28'>
-        <Image src={QuoteIcon} class='w-full' alt="Left Quote" />
+      <div class='w-[84px] h-[67px] absolute -top-[10px] -left-[140px] text-[128px] font-bold text-white' style={{
+        textShadow: '0 0 3px rgba(59, 138, 224, 60%), -6px 4px 2px rgba(59, 138, 224, 0.64)'
+      }}>
+        “
       </div>
-      <div class='w-[84px] h-[67px] absolute -bottom-2 -right-32 -scale-100'>
-        <Image src={QuoteIcon} class='w-full' alt="Right Quote" />
+      <div class='w-[84px] h-[67px] absolute top-[70px] -right-[150px] text-[128px] font-bold text-white -scale-x-100' style={{
+        textShadow: '0 0 3px rgba(59, 138, 224, 60%), 6px 4px 2px rgba(59, 138, 224, 0.64)'
+      }}>
+        “
       </div>
     </Text>
-    <div class="max-md:p-0 p-3" />
-    <!-- <div class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto'>
-      <div class='min-w-[34vw] max-md:w-[100%] max-md:min-h-[136px] bg-cover bg-center rounded-lg' style={{
-        backgroundImage: `linear-gradient(90deg, rgba(255, 255, 255, 0) 40.82%, #FFFFFF 95.62%), url(${heroTestimonial})`
-      }}>
-      </div>
-      <div class='flex flex-col justify-center px-14 max-md:px-0 max-md:items-center'>
-        <Text
-          type={'regular'}
-          class={'text-black max-md:mt-4 max-md:w-[80%]'}
-        >
-          “This school offers more than just education. Teachers give individual attention, and activities add to the wholesome learning experience...”
-        </Text>
-        <div data-video-open="0" class="max-md:flex max-md:justify-center">
-          <Button class='mt-4'>
-            <span>Watch Video</span>
-            <svg slot="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM13.2313 8.72996C12.9466 8.53003 12.6242 8.32321 12.2903 8.1202C11.0034 7.33764 10.36 6.94636 9.7829 7.37957C9.2058 7.81278 9.15335 8.71968 9.04846 10.5335C9.01879 11.0464 9 11.5493 9 12.0001C9 12.4508 9.01879 12.9537 9.04846 13.4666C9.15335 15.2804 9.2058 16.1873 9.7829 16.6205C10.36 17.0537 11.0034 16.6625 12.2903 15.8799C12.6242 15.6769 12.9466 15.4701 13.2313 15.2702C13.5559 15.0423 13.909 14.7688 14.2651 14.4783C15.555 13.426 16.2 12.8999 16.2 12.0001C16.2 11.1002 15.555 10.5741 14.2651 9.52182C13.909 9.23134 13.5559 8.95785 13.2313 8.72996Z" fill="white"/>
-            </svg>
-          </Button>
-        </div>
-      </div>
-    </div> -->
+    <Text type="base" class="mt-1 font-bold text-center">Shaping a Brighter Future for Your Child.</Text>
+    <div class="max-md:p-0 p-6" />
+
+    <div class="w-[70%] relative left-[20%] h-[2px] self-start" style={{
+      background: 'linear-gradient(to left, rgb(3, 55, 112) 0%, rgb(162, 205, 251) 100%)'
+    }}></div>
 
     <div class="flex flex-row gap-7 max-sm:flex-col max-sm:gap-0 mt-16">
       {testimonials.map(item => {
@@ -83,14 +71,20 @@ const testimonials = [
           <TestimonicalCard 
               quote={item.quote}
               author={item?.author}
+              role={item?.role}
               image={item.image}
               ctaText={item.ctaText}
               ctaLink={item.ctaLink}
-              className="bg-transparent  rounded-bl-[50px]"
+              className="bg-transparent"
           />
         )
       })}
     </div>
+    <div class="max-md:p-0 p-[40px]" />
+
+    <div class="w-[70%] relative left-[5%] h-[2px] self-start" style={{
+      background: 'linear-gradient(to right, rgb(3, 55, 112) 0%, rgb(162, 205, 251) 100%)'
+    }}></div>
 
     <!-- <iframe width="330" height="186" src="https://www.youtube.com/embed/" title="Glentree Student Testimonial | Glentree Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
   

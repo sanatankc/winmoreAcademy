@@ -26,7 +26,7 @@ const {
       <div class="selectCustom-trigger">{defaultValue ? defaultValue : placeholder}</div>
       <div class="selectCustom-options">
         {options.map((option: string) => (
-          <div class="selectCustom-option hover:bg-green-600" data-value={option}>
+          <div class="selectCustom-option hover:bg-accent" data-value={option}>
             {option}
           </div>
         ))}
@@ -160,7 +160,7 @@ const {
 .selectCustom-option:hover {
   color: white;
   cursor: default;
-  background-color: #EB5133;
+  background-color: #4B97E9;
 }
 
 .selectCustom-option:not(:last-of-type)::after {

@@ -1,26 +1,54 @@
 ---
-import Text from '../system/Text.astro'
-import campusSectionPatternBG from '../../images/campusSectionPatternBG.png'
-import sarjapurCampus from '../../images/sarjapurCampus.webp'
-import whitefieldCampus from '../../images/whitefieldCampus.webp'
-import CampusCard from './campusCard.astro';
-import Constrain from '../system/Constrain.astro';
-import { Image } from 'astro:assets';
+import Text from "../system/Text.astro";
+import CampusCard from "./campusCard.astro";
+import slide2 from "../../img/slides/2.jpg";
+import slide3 from "../../img/slides/3.jpg";
+
 ---
-<div class='bg-accent relative p-20 max-md:p-5'>
-  <Image src={campusSectionPatternBG} class='w-screen absolute top-0 left-0 -z-1' role="presentation" alt="decoration" />
-  <Constrain>
-    <div class='relative z-10'>
-      <Text type='subtitle' class='text-white' style={{ letterSpacing: '0.1em', opacity: 0.8 }}>Locate Us</Text>
-      <Text type='h2' class='text-white mt-3'>Our Branches</Text>
-      <div class='grid grid-cols-2 gap-8 max-md:grid-rows-2 max-md:grid-cols-1 justify-between mt-8'>
-        <!-- <a href='https://glentreeacademy.com/glentree-whitefield/'> -->
-          <CampusCard link='/glentree-whitefield/' image={whitefieldCampus} class='mr-8' name='Whitefield' desc="Centrally located in the IT corridor of Bangalore." />
-        <!-- </a> -->
-        <!-- <a href='/glentree-sarajapura/'> -->
-          <CampusCard  link="/glentree-sarjapur/" image={sarjapurCampus} name='Sarjapur' desc="A sprawling green campus located within the heart of the city." />
-        <!-- </a> -->
-      </div>
-    </Constrain>
+
+
+<div class='bg-white p-14 max-md:p-5 flex flex-col gap-8'>
+    <div class="flex flex-col gap-3 items-center justify-center">
+      <Text type="subtitle">DIVERSE ENVIRONMENTS</Text>
+      <Text type="h2">Explore our <span class="text-[#3B8AE0]">Campuses</span></Text>
     </div>
+  <div class="flex flex-col gap-5">
+    <CampusCard
+      image={[
+        {type: 'picture', slide: [
+        { src: slide2, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide2, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      {type: 'picture', slide: [
+        { src: slide3, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide3, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      ]}
+      name={"Whitefield"}
+      desc={"Survey No. 13/1, Bhaktharahalli, Nadavati Post, Hoskote Taluk, Bengaluru – 560067"}
+      index={0}
+      ctaText={'Apply Now'}
+      path={`hhh`}
+    >
+    </CampusCard>
+    <CampusCard
+      image={[
+        {type: 'picture', slide: [
+        { src: slide2, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide2, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      {type: 'picture', slide: [
+        { src: slide3, media: "(min-width: 768px)", position: 'center 64%' },
+        { src: slide3, media: "(max-width: 768px)" },
+      ], position: 'center 10%'},
+      ]}
+      name={"Jakkur"}
+      desc={"Survey No. 13/1, Bhaktharahalli, Nadavati Post, Hoskote Taluk, Bengaluru – 560067"}
+      index={1}
+      class="items-end"
+      ctaText={'Apply Now'}
+      path={`hhh`}
+    >
+    </CampusCard>
+  </div>
   </div>

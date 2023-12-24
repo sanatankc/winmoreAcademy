@@ -18,7 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
   formData.append("Email", email);
   formData.append("Campus", campus);
   formData.append("Grade", grade);
-  formData.append("sheetName", 'Users');
+  // formData.append("sheetName", 'Users');
   formData.append("Date_Time", new Date().toLocaleString('en-GB', { timeZone: 'IST' }));
   formData.append("Whatsapp Consent", whatsappConsent === 'on' ? 'Yes' : 'No');
 
@@ -37,21 +37,19 @@ export const POST: APIRoute = async ({ request }) => {
   const QueryContactSourceID = sources[utmSource] || null;
 
 
-  await postMCB({
-    studentName,
-    parentName,
-    phone,
-    email,
-    campus,
-    grade,
-    QueryContactSourceID,
-    utm_campaign
-  })
+// await postMCB({
+//   studentName,
+//   parentName,
+//   phone,
+//   email,
+//   campus,
+//   grade,
+//   QueryContactSourceID,
+//   utm_campaign
+// })
 
-  
-  // https://script.google.com/macros/s/AKfycbwOV1zlrnIduiluW3iMoqEzLVHKHTVUwXq8O-PpoLJtrH6QNxPDv5LaXrpGEaFKi2A5Jw/exec
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbwOV1zlrnIduiluW3iMoqEzLVHKHTVUwXq8O-PpoLJtrH6QNxPDv5LaXrpGEaFKi2A5Jw/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbz3c0TfOjZtKOB4hSSLR2Iv7S4nbkIcpWk2y8DRs_Ff4vRcoiqE-9Ub8KpcAyKZBXJP/exec', {
       method: 'POST',
       body: formData
     });

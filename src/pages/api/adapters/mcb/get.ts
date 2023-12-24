@@ -1,7 +1,6 @@
 const campuses = {
-  cvraman: "CV Raman Nagar",
-  indiranagar: "Indiranagar",
-  mandur: "Mandur",
+  whitefield: 'Whitefield',
+  jakkur: 'Jakkur',
 }
 
 
@@ -9,7 +8,7 @@ let apiResponse = {
   branches: [
     {
         "BranchID": 38,
-        "BranchName": campuses.cvraman,
+        "BranchName": campuses.whitefield,
         "LocationID": 34,
         "Pincode": "560075",
         classes: [
@@ -34,7 +33,7 @@ let apiResponse = {
     },
     {
         "BranchID": 50,
-        "BranchName": campuses.indiranagar,
+        "BranchName": campuses.jakkur,
         "LocationID": 34,
         "Pincode": "560075",
         classes: [
@@ -53,25 +52,6 @@ let apiResponse = {
            "326"
       ],
     },
-    {
-        "BranchID": 224,
-        "BranchName": campuses.mandur,
-        "LocationID": 34,
-        "Pincode": "560049",
-        classes: [
-           "314",
-           "315",
-           "316",
-           "317",
-           "318",
-           "319",
-           "320",
-           "321",
-           "322",
-           "323",
-           "324"
-        ]
-    }
   ],
   classes: [
     {

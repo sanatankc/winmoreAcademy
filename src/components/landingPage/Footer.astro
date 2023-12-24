@@ -1,5 +1,5 @@
 ---
-import logo from '../../images/logoLight.webp'
+import logo from '../../images/logoLight.png'
 import { Image } from 'astro:assets';
 import facebook from '../../icons/socials/Facebook.svg'
 import instagram from '../../icons/socials/Instagram.svg'
@@ -22,33 +22,34 @@ const baseURL = 'https://navigate-designer-808266.framer.app/'
   <div class='w-full px-2 pl-8 max-md:px-6 max-md:pl-6'>
     <Constrain class="flex flex-row max-md:flex-col justify-between">
       <div>
-        <Image src={logo} alt="Glentree's Logo" class="w-16 h-auto self-start" />
+        <Image src={logo} alt="Glentree's Logo" class="w-[160px] h-auto self-start" />
         <div class='flex flex-row mt-6'>
-          <a target="_blank" href="https://www.facebook.com/nationalcentreforexcellence" class='mr-5 w-[36px] h-[36px] flex items-center justify-center bg-[rgb(251,221,215)] rounded-full'>
+          <a target="_blank" href="https://www.facebook.com/nationalcentreforexcellence" class='mr-5  flex items-center justify-center rounded-full'>
             <div class='h-[16px]'>
               <img src={facebook.src} alt="Facebook Icon" class="w-full h-full">
             </div>
           </a>
   
-          <!-- <a target="_blank" href="https://twitter.com/GlentreeAcademy" class='mr-5 w-[36px] h-[36px] flex items-center justify-center bg-[rgb(251,221,215)] rounded-full'>
+          <a target="_blank" href="https://twitter.com/GlentreeAcademy" class='mr-5  flex items-center justify-center rounded-full'>
             <div class='h-[16px]'>
               <img src={twitter.src} alt="Twitter Icon" class="w-full h-full">
             </div>
-          </a> -->
+          </a>
+          
   
-          <a target="_blank" href="https://www.instagram.com/ncfeschool/" class='mr-5 w-[36px] h-[36px] flex items-center justify-center bg-[rgb(251,221,215)] rounded-full'>
+          <a target="_blank" href="https://www.instagram.com/ncfeschool/" class='mr-5  flex items-center justify-center rounded-full'>
             <div class='h-[16px]'>
               <img src={instagram.src} alt="Instagram Icon" class="w-full h-full">
             </div>
           </a>
   
-          <!-- <a target="_blank" href="https://www.linkedin.com/company/glentreeacademy/" class='mr-5 w-[36px] h-[36px] flex items-center justify-center bg-[rgb(251,221,215)] rounded-full'>
+          <a target="_blank" href="https://www.linkedin.com/company/glentreeacademy/" class='mr-5  flex items-center justify-center rounded-full'>
             <div class='h-[16px]'>
               <img src={linkedin.src} alt="Linkedin Icon" class="w-full h-full">
             </div>
-          </a> -->
+          </a>
   
-          <a target="_blank" href="https://www.youtube.com/@nationalcentreforexcellence" class='mr-5 w-[36px] h-[36px] flex items-center justify-center bg-[rgb(251,221,215)] rounded-full'>
+          <a target="_blank" href="https://www.youtube.com/@nationalcentreforexcellence" class='mr-5  flex items-center justify-center rounded-full'>
             <div class='h-[16px]'>
               <img src={youtube.src} alt="Youtube Icon" class="w-full h-full">
             </div>
@@ -92,18 +93,15 @@ const baseURL = 'https://navigate-designer-808266.framer.app/'
 
         </div> -->
         <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
-          <Text type={'base'} class=' !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 text-accent'>CV Raman Nagar</Text>
+          <Text type={'lg'} class='mb-7 max-md:mb-3 text-[#FF557E] font-bold'>Whitefield <span class="text-white">Campus</span></Text>
   
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5 flex-shrink-0'>
               <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
             </div>
             <div>
-              <a target='_blank' href="mailto:admissions.cvr@ncfe.ac.in" class="hover:underline">
-                <Text type={'sm'} class='ml-2'>admissions.cvr@ncfe.ac.in</Text>
-              </a>
-              <a target='_blank' href="mailto:reachus@ncfe.ac.in" class="hover:underline">
-                <Text type={'sm'} class='ml-2'>reachus@ncfe.ac.in</Text>
+              <a target='_blank' href="mailto:info@winmoreacademy.comn" class="hover:underline">
+                <Text type={'sm'} class='ml-2'>info@winmoreacademy.com</Text>
               </a>
             </div>
           </div>
@@ -112,32 +110,30 @@ const baseURL = 'https://navigate-designer-808266.framer.app/'
             <div class='w-5'>
               <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href='tel:08069455100' class="hover:underline"><Text type={'sm'} class='ml-2'>08069455100</Text></a>
+            <div>
+              <a target='_blank' href='tel:919148449538' class="hover:underline"><Text type={'sm'} class='ml-2'>+91 91 91484 49538</Text></a>
+              <a target='_blank' href='tel:919148449539' class="hover:underline"><Text type={'sm'} class='ml-2'>+91 91 91484 49539</Text></a>
+            </div>
   
           </div>
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5 flex-shrink-0'>
               <Image src={locationIcon} alt="Phone Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href='https://www.google.com/maps/search/national%2Bcentre%2Bfor%2Bexcellence/%4012.9745521%2C77.6603007%2C16z/data=%213m1%214b1' class="hover:underline"><Text type={'sm'} class='ml-2'>154/1, Vijay Kiran Knowledge Park,5th Main, Malleshpalya,Bengaluru 560075</Text></a>
+            <a target='_blank' href='https://www.google.com/maps/search/national%2Bcentre%2Bfor%2Bexcellence/%4012.9745521%2C77.6603007%2C16z/data=%213m1%214b1' class="hover:underline"><Text type={'sm'} class='ml-2'>Survey No. 13/1, Bhaktharahalli, Nadavati Post, Hoskote Taluk, Bengaluru – 560067</Text></a>
           </div>
         </div>
 
-        <div class="bg-white/20 w-[1px] h-full max-md:h-[1px] max-md:w-full"></div>
-
         <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
-          <Text type={'base'} class=' !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 text-accent'>Indiranagar</Text>
+          <Text type={'lg'} class='mb-7 max-md:mb-3 text-[#FF557E] font-bold'>Jakkur <span class="text-white">Campus</span></Text>
   
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5 flex-shrink-0'>
               <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
             </div>
             <div>
-              <a target='_blank' href="mailto:admissions.jbn@ncfe.ac.in" class="hover:underline">
-                <Text type={'sm'} class='ml-2'>admissions.jbn@ncfe.ac.in</Text>
-              </a>
-              <a target='_blank' href="mailto:reachus.jbn@ncfe.ac.in" class="hover:underline">
-                <Text type={'sm'} class='ml-2'>reachus.jbn@ncfe.ac.in</Text>
+              <a target='_blank' href="mailto:info@winmoreacademy.com" class="hover:underline">
+                <Text type={'sm'} class='ml-2'>info@winmoreacademy.com</Text>
               </a>
             </div>
           </div>
@@ -146,43 +142,20 @@ const baseURL = 'https://navigate-designer-808266.framer.app/'
             <div class='w-5'>
               <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href='tel:08047106008' class="hover:underline"><Text type={'sm'} class='ml-2'>08047106008</Text></a>
+            <div>
+              <a target='_blank' href='tel:919148449538' class="hover:underline"><Text type={'sm'} class='ml-2'>+91 91 91484 49538</Text></a>
+              <a target='_blank' href='tel:919148449539' class="hover:underline"><Text type={'sm'} class='ml-2'>+91 91 91484 49539</Text></a>
+            </div>
   
           </div>
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5 flex-shrink-0'>
               <Image src={locationIcon} alt="Phone Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href='https://g.page/r/CawSaTC_IdjHEBA' class="hover:underline"><Text type={'sm'} class='ml-2'>1054/2, 7th Main, 11th Cross, LIC Colony, Next to Murugan Temple, Jeevan Bhima Nagar, Bengaluru – 560075.</Text></a>
+            <a target='_blank' href='https://g.page/r/CawSaTC_IdjHEBA' class="hover:underline"><Text type={'sm'} class='ml-2'>Survey No. 37/1, Nehru Nagar Shivannahalli, off Jakkur-Yalahanka Road, Bengaluru – 560064</Text></a>
           </div>
         </div>
-        <div class="bg-white/20 w-[1px] h-full max-md:h-[1px] max-md:w-full"></div>
-        <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
-          <Text type={'base'} class=' !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 text-accent'>Mandur</Text>
-  
-          <div class='flex flex-row items-center mb-3'>
-            <div class='w-5 flex-shrink-0'>
-              <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
-            </div>
-            <a target='_blank' href="mailto:admissions.mandur@ncfe.ac.in" class="hover:underline">
-              <Text type={'sm'} class='ml-2'> admissions.mandur@ncfe.ac.in</Text>
-            </a>
-          </div>
-  
-          <div class='flex flex-row items-center mb-3'>
-            <div class='w-5'>
-              <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
-            </div>
-            <a target='_blank' href='tel:08069455200' class="hover:underline"><Text type={'sm'} class='ml-2'>08069455200</Text></a>
-  
-          </div>
-          <div class='flex flex-row items-center mb-3'>
-            <div class='w-5 flex-shrink-0'>
-              <Image src={locationIcon} alt="Phone Icon" class="w-full h-full">
-            </div>
-            <a target='_blank' href='https://www.google.com/maps/place/National+Centre+For+Excellence+school+Mandur/@13.0907828,77.7433124,15z/data=!4m6!3m5!1s0x3bae1bf74ffd3cd5:0xb6af51fdceb499d1!8m2!3d13.0907828!4d77.7433124!16s%2Fg%2F11tsn2n0x6?entry=ttu' class="hover:underline"><Text type={'sm'} class='ml-2'>NCFE School Hancharahalli Main Rd, Mandur, Bengaluru, 560049</Text></a>
-          </div>
-        </div>
+       
         <!-- <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
           <Text type={'base'} class='text-green-300 mb-7 max-md:mb-3 font-semibold'>Whitefield</Text>
   

@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import TopNavigationBar from '../components/TopNavigationBar.astro';
 
-import WhyGlentree from '../components/register/whyGlentree.astro';
-import Campus from '../components/register/campus.astro';
+import Facilities from '../components/register/facilities.astro';
+import Campus from '../components/landingPage/campus.astro';
 
 import Testimonial from '../components/landingPage/Testimonial.astro';
 import Scholarship from '../components/register/scholarship.astro';
@@ -42,9 +42,13 @@ import prePrimary from '../img/academics/preview/prePrimary.webp'
 import grade3to5 from '../img/academics/preview/grade3to5.webp'
 import grade6to8 from '../img/academics/preview/grade6to8.webp'
 import grade9to12 from '../img/academics/preview/grade9to12.jpg'
+
+import whyWinmore1 from '../image/whyWinmore/1.png'
+
 import AcademicCard from '../components/AcademicCard.astro';
 
 import underlineSVG from '../img/underline.svg'
+import BentoGrid from '../components/BentoGrid.astro';
 const faqs = [
   {
     question: 'How do I apply for admission to Glentree Academy?',
@@ -143,25 +147,15 @@ const faqs = [
           <div class="max-md:p-2 max-md:block hidden"  />
 
           <div class="h-full flex flex-row items-end relative z-20 self-end max-md:self-start max-md:w-full justify-center">
-            <div class="flex flex-col items-center mb-10 max-md:mb-2">
-              <Text type="h3" class='text-white text-[1.6rem] tracking-wide flex flex-col items-center gap-0'>
-                <div class="flex flex-row gap-5"><div class="text-[56px] max-md:text-[32px] rotate-[-7deg] max-md:rotate-[-5deg] relative  text-accent2 max-md:text-black font-semibold font-display leading-[60px] max-md:leading-[36px]">Inspire </div> <div class="text-accent text-[50px] max-md:text-[28px] italic font-display leading-[50px] max-md:leading-[36px]" style={{ textShadow: 'rgb(237, 181, 75) 0px 2px 0px', }}>Excellence</div></div>
-                <div><span class="font-cursive text-[46px] max-md:text-[32px] leading-[50px] text-accent max-md:text-accent3">and</span></div>
-                <div class="flex flex-row gap-5"><div class="text-[56px] max-md:text-[32px] text-accent2 max-md:text-black font-semibold italic font-display leading-[60px] rotate-[-7deg]  max-md:leading-[36px]">Ignite </div> 
-                <div class="text-accent  text-[50px] max-md:text-[28px] italic font-display leading-[50px] max-md:leading-[36px] relative" style={{ textShadow: 'rgb(237, 181, 75) 0px 2px 0px', }}>
-                  Success
-                  <div class="w-[170px] max-md:w-[110px] h-[16px] absolute bottom-[-14px]">
-                    <img src={underlineSVG.src} alt="Underline" />
-                  </div>
-                </div>
-              </div>
-              </Text>
+            <div class="flex flex-col items-start mb-10 max-md:mb-2">
+              <Text type="h1" class="text-white leading-[120%]">A New Beginning with <br/>a <span>Promising future</span></Text>
+              <Text type="lg" class="text-white">Get your child on the part to success</Text>
             </div>
           </div>
           <div class="max-md:py-4" />
           <RegisterForm />
         </div>
-        <AdmissionMarquee class="max-md:!hidden" />
+        <!-- <AdmissionMarquee class="max-md:!hidden" /> -->
         <!-- <div class="w-[50px] h-[50px] down-arrow-button transition-all duration-500 rounded-[50%] bg-accent border-accent/60 border-[4px] absolute top-[97vh] left-[50%] z-[9999] flex items-center justify-center max-md:hidden">
           <div class="w-[18px] h-[9px] down-arrow-icon">
             <Image src={DownArrow} alt="Down Arrow" class="w-full h-full object-cover" />
@@ -169,202 +163,90 @@ const faqs = [
         </div> -->
       </div>
 
-    <div class='relative p-20 pb-10 max-md:p-5 text-black' style={{
-      background: 'linear-gradient(180deg, rgba(232, 225, 212, 0%), rgba(232, 225, 212, 44%))',
-    }}>
-      <Constrain>
-        <div class='relative z-10 flex flex-col items-center'>
-          <Text type="subtitle" class='text-accent3'>Explore Our Legacy</Text>
-          <Text type='h2' class='mt-3 text-black'>An{' '}<span class='text-accent'>Overview</span></Text>
-          <Text type="base" class="mt-6">Discover the landscape of NCFE's offerings: A glimpse into our world of excellence and diversity</Text>
-          <div class="w-[870px] max-md:w-full max-md:h-[450px] h-[537px] flex flex-col mt-8">
-            <div class="flex flex-row flex-1 border-b border-dashed border-black/20">
-              <div class="flex-1 flex px-2 flex-col items-center justify-center border-black/20">
-                <Text type="h2" class="max-md:text-[26px] text-accent">3000+</Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Students
-                </Text>
-              </div>
-              <div class="flex-1 flex px-2 items-center justify-center flex-col border-black/20">
-                <Text type="h2" class="max-md:text-[26px] text-accent3 flex items-start">
-                  3
-                </Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Campuses
-                </Text>
-              </div>
-              <div class="flex-1 flex px-2 items-center justify-center flex-col">
-                <Text type="h2" class="max-md:text-[26px] text-accent">200+</Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Teachers
-                </Text>
-              </div>
-            </div>
-            <div class="flex flex-row flex-1 border-b border-dashed border-black/20">
-              <div class="flex-1 flex px-2 items-center justify-center flex-col border-black/20">
-                <Text type="h2" class="max-md:text-[26px] text-accent3">25:1</Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Student-Teacher Ratio
-                </Text>
-              </div>
-              <div class="flex-1 flex px-2 items-center justify-center flex-col border-black/20">
-                <Text type="h2" class="max-md:text-[26px] text-accent">18</Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Years of Excellence
-                </Text>
-                
-              </div>
-              <div class="flex-1 flex px-2 items-center justify-center flex-col">
-                <Text type="h2" class="max-md:text-[26px] text-accent3 flex flex-row items-start">
-                  13
-                </Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Student Clubs
-                </Text>
-              </div>
-            </div>
-            <div class="flex flex-row flex-1">
-              <div class="flex-1 flex px-2 items-center justify-center flex-col border-black/20">
-                <Text type="h2" class="max-md:text-[26px] text-accent">24</Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Co-Scholastics
-                </Text>
-              </div>
-              <div class="flex-1 flex px-2 items-center justify-center flex-col border-black/20">
-                <Text type="h2" class="max-md:text-[26px] text-accent3">K-12</Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Grades
-                </Text>
-              </div>
-              <div class="flex-1 flex px-2 items-center justify-center flex-col">
-                <Text type="h2" class="max-md:text-[26px] text-accent">4000+</Text>
-                <Text type='base' class='mt-3 font-normal text-center'>
-                  Alumni
-                </Text>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Constrain>
-    </div>
-
-
 
 
    
       
 
     <div class='w-full p-14 pb-20 text-black bg-white flex flex-col items-center max-md:p-6'>
-      <div class="flex-1">
-        <Text type="subtitle" class='text-accent3 font-medium !text-base'>OUR CURRICULUM</Text>
-        <Text type='h2' class='mt-3 text-black'>Academic</Text>
-        <div class="flex flex-row items-center gap-3 mt-3">
-          <div class="bg-accent w-[100px] h-[2px]"></div>
-          <Text type='h2' class='text-accent text-[56px] font-medium italic'>Landscape</Text>
-        </div>
-        <Text type="base" class="mt-14 max-md:mt-6">
-          We have reimagined academics to promote active, hands-on, and personalized learning. Our approach goes beyond subjects, linking STEM with the humanities, language with the arts, and classroom lessons with real-world experience. Our curriculum is both innovative and challenging, advancing through four academic stages: <span class="text-accent font-medium">Fledgling, Watering, Blossoming, and Basking.</span>
-        </Text>
-      </div>
+      
+        <Text type="subtitle" class='text-accent3'>Why Winmore?</Text>
+        <Text type='h2' class='mt-3 text-black'>Why{' '}<span class='text-accent'>Winmore</span></Text>
+        <Text type="base" class="mt-6 text-center">Lorem ipsum dolor sit amet consectetur. Convallis nisl et odio massa curabitur vel.<br/> Nulla eu eu in justo nunc semper feugiat vitae diam.</Text>
 
-      <div class="flex flex-col gap-5 max-md:gap-3 w-full mt-8">
-        <div class="flex flex-row max-md:flex-col w-full gap-3 text-white">
+      <div class="flex flex-col justify-center gap-[40px] max-md:gap-3 w-full mt-[40px]">
+        <div class="flex flex-row justify-center max-md:flex-col w-full gap-[48px] text-white">
           <AcademicCard
             link="https://navigate-designer-808266.framer.app/academic-stages#pp-grade2"
-            title="Foundational Years<br/>(Pre-Primary - Grade 2)"
-            description="At the Foundational Years(Fledgling), our young learners engage in joyful, inclusive experiences, focusing on overall development through experiential learning and play."
-            image={prePrimary}
+            title="Holistic <span>Development</span>"
+            description="Right Mix of Curricular and Co-Curricular Activities."
+            image={whyWinmore1}
           />
           <AcademicCard
             link="https://navigate-designer-808266.framer.app/academic-stages#grade3-grade5"
-            title="Preparatory Years(Grade 3-5)"
-            description="At the Preparatory Years(Watering), we cultivate inclusive learning, with a focus on fundamental skills and nurturing the ability to inquire about the world around them."
-            image={grade3to5}
+            title="<span>Proven</span> and <span>Tested</span><br/> Centralized Curriculum"
+            description="Right Mix of Curricular and Co-Curricular Activities."
+            image={whyWinmore1}
           />
         </div>
-        <div class="flex flex-row max-md:flex-col w-full gap-3 text-white">
+        <div class="flex flex-row justify-center max-md:flex-col w-full gap-[48px] text-white">
           <AcademicCard
             link="https://navigate-designer-808266.framer.app/academic-stages#grade6-grade8"
-            title="Middle Years(Grade 6-8)"
-            description="At the Middle Years(Blossoming), we facilitate transdisciplinary learning, guiding students to identify patterns around them, fostering a holistic educational experience."
-            image={grade6to8}
+            title="<span>Innovative</span> and <span>Challenging</span><br/> learning Methodologies"
+            description="Right Mix of Curricular and Co-Curricular Activities."
+            image={whyWinmore1}
           />
           <AcademicCard
             link="https://navigate-designer-808266.framer.app/academic-stages#grade9-grade12"
-            title="Secondary Years(Grade 9-12)"
-            description="At the Secondary Years(Basking), our emphasis is on cultivating in-depth concept understanding, ensuring academic excellence and future success."
-            image={grade9to12}
+            title="<span>Faculty</span> Enrichment Program"
+            description="Right Mix of Curricular and Co-Curricular Activities."
+            image={whyWinmore1}
           />
         </div>
       </div>
-      <!-- <div class='w-full flex-col flex items-center rounded-2xl max-md:rounded-2xl overflow-hidden mt-16 max-w-[1196px]'>
-        <div class="flex flex-row w-full">
-          <div class="flex-1 justify-center items-center">
-            <Image src={prePrimary} alt="Pre Primary"  />
-          </div>
-          <div class="flex-1">
-            <Text type="subtitle" class='text-accent3 font-medium !text-base'>PRE-PRIMARY TO GRADE 2</Text>
-            <Text type='h3' class='mt-3 text-black'>Foundation Years</Text>
-            <div class="flex flex-row items-center gap-3">
-              <div class="bg-accent w-[80px] h-[2px]"></div>
-              <Text type='h3' class='text-accent text-[1.9rem] font-medium italic'>Fledging Stage</Text>
-            </div>
-            <Text type="base" class="mt-2">Our Early Years program nurtures every aspect of a child's growth. We guide them through activities that enhance their emotional (affective), intellectual (cognitive), and physical (psychomotor) development. Learning is fun and interactive with our play-based approach, and free play with friends in a supportive environment helps build social skills.</Text>
-          </div>
-        </div>
-      </div>
-      <div class='w-full flex-col flex items-center rounded-2xl max-md:rounded-2xl overflow-hidden mt-28 max-w-[1196px]'>
-        <div class="flex flex-row w-full">
-          <div class="flex-1">
-            <Text type="subtitle" class='text-accent3 font-medium !text-base'>GRADE 3 TO GRADE 5</Text>
-            <Text type='h3' class='mt-3 text-black'>Preparatory Years</Text>
-            <div class="flex flex-row items-center gap-3">
-              <div class="bg-accent w-[80px] h-[2px]"></div>
-              <Text type='h3' class='text-accent text-[1.9rem] font-medium italic'>Watering Stage</Text>
-            </div>
-            <Text type="base" class="mt-2">The Preparatory Stage, designed for 8 to 11-year-olds, emphasises a hands-on approach to learning as outlined in the National Education Policy. Students explore and understand complex ideas through active experimentation, keen observation, and engaging with real-world scenarios. Integrating play with practical activities, this stage fosters a holistic understanding for young learners.</Text>
-          </div>
-          <div class="flex-1 flex justify-end items-end">
-            <Image src={grade3to5} alt="Pre Primary" class="w-[80%]" />
-          </div>
-        </div>
-      </div>
-      <div class='w-full flex-col flex items-center rounded-2xl max-md:rounded-2xl overflow-hidden mt-28 max-w-[1196px]'>
-        <div class="flex flex-row w-full">
-          <div class="flex-1 justify-center items-center">
-            <Image src={grade6to8} alt="Pre Primary" class="w-[80%]" />
-          </div>
-          <div class="flex-1">
-            <Text type="subtitle" class='text-accent3 font-medium !text-base'>GRADE 6 TO GRADE 8</Text>
-            <Text type='h3' class='mt-3 text-black'>Middle Years</Text>
-            <div class="flex flex-row items-center gap-3">
-              <div class="bg-accent w-[80px] h-[2px]"></div>
-              <Text type='h3' class='text-accent text-[1.9rem] font-medium italic'>Blossoming Stage</Text>
-            </div>
-            <Text type="base" class="mt-2">The Middle Stage builds on earlier foundations by introducing students to more complex topics across diverse subjects. Emphasising skill integration and critical thinking, it encourages practical application of knowledge. This experiential, multidisciplinary approach ensures students gain essential life skills.</Text>
-          </div>
-        </div>
-      </div>
-      <div class='w-full flex-col flex items-center rounded-2xl max-md:rounded-2xl overflow-hidden mt-28 max-w-[1196px]'>
-        <div class="flex flex-row w-full">
-          <div class="flex-1">
-            <Text type="subtitle" class='text-accent3 font-medium !text-base'>GRADE 9 TO GRADE 12</Text>
-            <Text type='h3' class='mt-3 text-black'>Secondary Years</Text>
-            <div class="flex flex-row items-center gap-3">
-              <div class="bg-accent w-[80px] h-[2px]"></div>
-              <Text type='h3' class='text-accent text-[1.9rem] font-medium italic'>Basking Stage</Text>
-            </div>
-            <Text type="base" class="mt-2">The Secondary Stage nurtures competencies with a learner-centric approach, ensuring active participation and experiential learning. Students enjoy flexibility in choosing subjects that align with their ambitions, fostering joy in learning and a multidisciplinary perspective. This stage strengthens understanding, values, and critical thinking, preparing students for life's various paths.</Text>
-          </div>
-          <div class="flex-1 flex justify-end items-center">
-            <Image src={grade9to12} alt="Pre Primary" class="w-[75%]" />
-          </div>
-        </div>
-      </div> -->
     </div>
 
-    <WhyGlentree />
+    <Facilities />
 
+        <div class="bg-black p-24 counter-stat">
+          <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+            <div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
+              <div class="items-stretch flex grow flex-col px-5 max-md:mt-10">
+                <Text type='h2' class='text-rose-400'>Experience the Crimson</Text>
+                <Text type='base' class='text-white'>Pan India Presence</Text>
+              </div>
+            </div>
+            <div class="flex flex-col items-stretch w-[67%] ml-5 max-md:w-full max-md:ml-0">
+              <div class="my-auto px-5 max-md:max-w-full max-md:mt-10">
+                <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                  <div class="flex flex-col items-stretch w-[37%] max-md:w-full max-md:ml-0">
+                    <div class="justify-center items-stretch flex grow flex-col max-md:mt-10">
+                      <Text type='h1' class='text-white flex flex-row'>0<div class='text-white' data-counter="7">0</div></Text>
+                      <Text type='base' class='text-white'>Locations in India</Text>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-stretch w-[46%] ml-5 max-md:w-full max-md:ml-0">
+                    <div class="justify-center items-stretch flex grow flex-col max-md:mt-10">
+                      <Text type='h1' class='text-white flex flex-row'><div class='text-white flex flex-row' data-counter="15000">14893</div>+</Text>
+                      <Text type='base' class='text-white'>Students</Text>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-stretch w-[16%] ml-5 max-md:w-full max-md:ml-0">
+                    <div class="justify-center items-stretch flex grow flex-col max-md:mt-10">
+                      <Text type='h1' class='text-white flex flex-row'><div class='text-white flex flex-row' data-counter="16">9</div></Text>
+
+                      <Text type='base' class='text-white'>Schools</Text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <BentoGrid />
+      
+    
+    
 
     <!-- <LFL /> -->
 
@@ -382,7 +264,7 @@ const faqs = [
     <div class="w-full items-center flex flex-col bg-white">
       <div class="p-4" />
 
-      <Text type="subtitle" class='text-accent3'>THINGS TO NOTE</Text>
+      <Text type="subtitle">THINGS TO NOTE</Text>
       <Text type='h2' class='mt-3 text-accent'>FAQs</Text>
 
       <div class="p-4" />
@@ -473,6 +355,56 @@ const faqs = [
 
 
 <script>
+  const counter = (EL) => {
+
+      const duration = 1000;
+
+      const start = parseInt(EL.textContent, 10);
+      const end = parseInt(EL.dataset.counter, 10); 
+
+      if (start === end) return; 
+
+      const range = end - start;
+      let curr = start;
+
+      const timeStart = Date.now();
+
+      const loop = () => {
+        let elaps = Date.now() - timeStart;
+        if (elaps > duration) elaps = duration; 
+        const frac = elaps / duration; 
+        const step = frac * range;
+        curr = start + step; 
+        EL.textContent = Math.trunc(curr); 
+        if (elaps < duration) requestAnimationFrame(loop); 
+      };
+
+      requestAnimationFrame(loop); 
+  };
+  function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      console.log(rect.bottom)
+      return (
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) 
+      );
+  }
+  function checkElementVisibility() {
+    const element = document.querySelector('.counter-stat');
+    if (isInViewport(element)) {
+      document.querySelectorAll("[data-counter]").forEach(counter);
+
+    } else {
+        console.log('Element is not in view');
+    }
+  }
+
+checkElementVisibility();
+
+// Then setup scroll event listener
+window.addEventListener('scroll', checkElementVisibility)
+
+
+
   // @@ts-ignore
 
   const academicBoxes = document.querySelectorAll('.academic-boxes')

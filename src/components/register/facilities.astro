@@ -1,0 +1,208 @@
+---
+import Constrain from '../system/Constrain.astro';
+import Text from '../system/Text.astro';
+import { Image } from 'astro:assets';
+import DeckCard from '../DeckCardWithGalleryCaption.astro';
+import bulletStar from '../../images/bulletStar.svg'
+
+import underlineSVG from '../../img/underline.svg'
+
+import pottery from '../../img/activities/pottery.jpg'
+import publicSpeaking from '../../img/activities/publicSpeaking.jpg'
+import sports from '../../img/activities/sports.jpg'
+import music from '../../img/activities/music.jpeg'
+import yoga from '../../img/activities/yoga.jpg'
+import robotics from '../../img/activities/robotics.jpg'
+import environment from '../../img/activities/environment.jpeg'
+import art from '../../img/activities/art.jpg'
+import homeScience from '../../img/activities/homeScience.webp'
+import karateClub from '../../img/activities/karateClub.webp'
+import scoutNGuides from '../../img/activities/scoutNGuides.webp'
+
+
+const deckCardWithDescription = [
+    {
+        "src": karateClub,
+        "caption": "Karate Club",
+        "description": "Master the art of Karate, improving physical fitness, focus, and self-discipline while learning self-defense techniques."
+    },
+    {
+        "src": art,
+        "caption": "Arts & Crafts",
+        "description": "Express creativity and fine-tune motor skills with diverse materials in our Arts & Crafts Club, where imagination meets reality."
+    },
+    // {
+    //     "src": coding,
+    //     "caption": "Coding Club",
+    //     "description": "Step into the future with our Coding Club, where students learn to create software, apps, and games, developing critical tech skills."
+    // },
+    {
+        "src": sports,
+        "caption": "Sports Activities",
+        "description": "Champion teamwork and sportsmanship through Football, Basketball, Cricket, Swimming, Badminton, Volleyball, Throwball, Table Tennis, Chess, and Carrom nurturing athletic talents and a healthy lifestyle."
+    },
+    {
+        "src": yoga,
+        "caption": "Yoga & Gymnastics",
+        "description": "Enhance flexibility, balance, and concentration with our Yoga & Gymnastics programs, promoting physical and mental well-being."
+    },
+    {
+        "src": pottery,
+        "caption": "Pottery Club",
+        "description": "Shape creativity and relax the mind with our pottery club, learning the art of molding clay into beautiful forms."
+    },
+    {
+        "src": robotics,
+        "caption": "Robotics Club",
+        "description": "Build and program robots in our Robotics Club, blending science and technology for innovative problem-solving skills."
+    },
+    // {
+    //     "src": calligraphy,
+    //     "caption": "Calligraphy Club",
+    //     "description": "Discover the elegance of penmanship in our Calligraphy Club, enhancing artistic expression through beautiful handwriting."
+    // },
+    // {
+    //     "src": creativeWriting,
+    //     "caption": "Creative Writing",
+    //     "description": "Unleash imagination with our Creative Writing group, crafting stories, poems, and narratives while honing language skills."
+    // },
+    {
+        "src": environment,
+        "caption": "Environment Club",
+        "description": "Join the crusade to protect our planet with the Environment Club, engaging in sustainability projects and green practices."
+    },
+    {
+        "src": homeScience,
+        "caption": "Home Science",
+        "description": "Learn the essentials of home management and nutrition in our Home Science Club, empowering practical life skills."
+    },
+    {
+        "src": music,
+        "caption": "Music Club",
+        "description": "Harmonize, compose, and perform in our Music Club, where melodies foster joy and teamwork."
+    },
+    {
+        "src": publicSpeaking,
+        "caption": "Public Speaking",
+        "description": "Gain confidence and eloquence with our Public Speaking program, developing articulate and persuasive communication skills."
+    },
+    {
+        "src": scoutNGuides,
+        "caption": "Scouts & Guides",
+        "description": "Adventure awaits in our Scouts & Guides, instilling survival skills, camaraderie, and a spirit of community service."
+    },
+    // {
+    //     "src": stemClub,
+    //     "caption": "STEM Club",
+    //     "description": "Delve into Science, Technology, Engineering, and Math with our STEM Club, where innovative minds solve complex challenges."
+    // }
+]
+
+---
+<div class="py-14 max-md:py-8 relative text-center flex flex-col items-center bg-white" style={{
+  background: 'rgba(59, 138, 224, 0.06)',
+}}>
+  <!-- <Image src={overviewRegisterPageBG} class='w-screen h-[130px] max-md:h-[60px] bg-cover bg-top absolute top-0 left-0 -z-1' role="presentation" alt="decoration" /> -->
+  <!-- <div class="p-4 max-md:p-1" /> -->
+    <Text type='h2' class='mt-3 text-black'><span>Facilities @ </span> Winmore</Text>
+    <Text type="base" class="mt-[16px] text-center">Lorem ipsum dolor sit amet consectetur. Convallis nisl et odio massa curabitur vel.<br/> Nulla eu eu in justo nunc semper feugiat vitae diam.</Text>
+    <p class="p-3" />
+  <Constrain class="flex flex-col w-full items-center gap-8">  
+
+    <div class="flex  flex-row-reverse gap-[64px] w-full justify-between mt-12 text-black max-w-[1170px] max-md:w-full max-md:flex-col max-md:items-center">
+      <div class="flex flex-col items-start text-left max-md:order-2 max-md:px-8">
+        <Text type="h3" class="tracking-[-0.96px]">Sports <span>Infrastructure</span></Text>
+        <div class="pt-4" />
+        <Text type="base">We offer top notch facilities and the latest in training in Sports to help our students explore their inner sportsman.</Text>
+        <div class="pt-[30px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">Open Play Areas</Text>
+        </div> 
+        <div class="pt-[23px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">Cricket nets</Text>
+        </div>
+        <div class="pt-[23px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">Skating rinks</Text>
+        </div>
+        <div class="pt-[23px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">Indoor facilities for chess, table tennis</Text>
+        </div>
+        <div class="pt-[32px]" /> 
+        <div class="cursor-pointer" data-modal-target="campus-facility1" data-target-deck="deck-campus-facility1">
+          <Text type="sm" class='text-[18px] uppercase text-accentDark tracking-[1.8px] underline font-bold'>VIEW all Sports</Text>
+        </div>
+      </div>
+
+      <DeckCard
+        deckContainerClass="relative left-2 max-md:-left-2"
+        cardHoverStyle={["border-accent"]}
+        gallery={deckCardWithDescription}
+        id="campus-facility1"
+      />
+    </div>
+    <div class="pt-[50px]" />
+    <div class="flex gap-[64px] w-full justify-between mt-12 text-black max-w-[1170px] max-md:w-full max-md:flex-col max-md:items-center">
+      <div class="flex flex-col items-start text-left max-md:order-2 max-md:px-8">
+        <Text type="h3" class="tracking-[-0.96px]"><span>Facilities</span> at a Glance</Text>
+        <div class="pt-4" />
+        <Text type="base">Our campuses are a happy space where our students are encouraged to enjoy their time in school and the joys of learning, discovery and overcoming challenges.</Text>
+        <div class="pt-[30px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">Spacious Digital Classrooms</Text>
+        </div> 
+        <div class="pt-[23px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">Open Courtyards</Text>
+        </div>
+        <div class="pt-[23px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">Well Stocked Libraries</Text>
+        </div>
+        <div class="pt-[23px]" /> 
+        <div class="flex flex-row items-center">
+          <div class="w-[16px] h-[18px]">
+            <Image src={bulletStar} class="w-full h-full object-cover" alt="bullet icon" />
+          </div>
+          <Text type="sm" class="ml-[10px] tracking-normal text-[#231F20]">GPS-Enabled Bus Services</Text>
+        </div>
+        <div class="pt-[32px]" /> 
+        <div class="cursor-pointer" data-modal-target="campus-facility1" data-target-deck="deck-campus-facility1">
+          <Text type="sm" class='text-[18px] uppercase text-accentDark tracking-[1.8px] underline font-bold'>VIEW all Facilities</Text>
+        </div>
+      </div>
+
+      <DeckCard
+        deckContainerClass="relative left-2 max-md:-left-2"
+        cardHoverStyle={["border-accent"]}
+        gallery={deckCardWithDescription}
+        id="campus-facility1"
+      />
+    </div>
+
+  </Constrain>
+  
+</div>

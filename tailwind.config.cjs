@@ -7,9 +7,10 @@ module.exports = {
 				'md': '1000px',
 			},
 			colors: {
-				accent:'#EB5133',
-				'accent-bold':'#FF9D51',
-				accent2:'#EDB54B', 
+				accent:'#4B97E9',
+				accentDark: '#2A5B91',
+				accent2:'#EA1649', 
+				accent2Light: '#FF557E',
 				accent3:'#5D2216',
 				yellow: '#F6D58D',
 				green: {
@@ -30,9 +31,8 @@ module.exports = {
 			}
 		},
 		fontFamily: {
-			'display': ['"Tiempos Headline"', 'sans-serif'],
-			'sans': ['"Circular Std"', 'sans-serif'],
-			'cursive': ['"Fasthand"', 'cursive'],
+			'display': ['"Gotham"', 'sans-serif'],
+			'sans': ['"Gotham"', 'sans-serif'],
 		}
 	},
 	plugins: [],

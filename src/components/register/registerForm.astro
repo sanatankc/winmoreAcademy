@@ -8,52 +8,56 @@ import SelectPill from '../system/SelectPill.astro'
 import { Image } from 'astro:assets';
 import apiResponse from '../../pages/api/adapters/mcb/get';
 
+
 import 'tippy.js/dist/tippy.css'; // optional for styling
 
 const campusName = Astro.url.searchParams.get('campus') || '';
 
 
 const campuses = {
-  cvraman: "CV Raman Nagar",
-  indiranagar: "Indiranagar",
-  mandur: "Mandur",
+  whitefield: 'Whitefield',
+  jakkur: 'Jakkur',
 }
+
 const selectedCampus = campuses[campusName] || null
 
 console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
 
 ---
 
-<div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-accent2 text-black rounded-xl items-center w-full max-w-[534px] relative z-20 transition-opacity duration-300" id="register-form-container-desktop">
+<div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-accentDark text-black rounded-xl items-center w-full max-w-[534px] relative z-20 transition-opacity duration-300" id="register-form-container-desktop">
   <div class="w-full form">
-    <Text type="h3" class='text-[28px] text-center'>Apply Now for <span class="text-accent2">AY 2024 - AY 2025</span></Text>
-    <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm">Fill the form below and we’ll get in touch shortly!</Text>
+    <Text type="h3" class='text-center'>Register Now for <span class="!text-accentDark">AY 2024-25</span></Text>
+    <div class="pt-2" />
+    <Text type="xs" class="text-black/70 text-center max-md:text-sm">Fill the form below and we’ll get in touch shortly!</Text>
     
     <form class="flex-col flex gap-[23px] mt-8 max-md:mt-6" id="register-form"  method="POST">
-      <input
-        placeholder="Student Name"
-        type="text"
-        name="studentName"
-        required
-        class="
-          w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
-          py-3 pl-4 text-[14px]
-          relative
-          pr-[42px]
-        "
-      />
-      <input
-        placeholder="Parent Name"
-        type="text"
-        name="parentName"
-        required
-        class="
-          w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
-          py-3 pl-4 text-[14px]
-          relative
-          pr-[42px]
-        "
-      />
+      <div class="flex flex-row gap-[23px]">
+        <input
+          placeholder="Student Name"
+          type="text"
+          name="studentName"
+          required
+          class="
+            w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
+            py-3 pl-4 text-[14px]
+            relative
+            pr-[42px]
+          "
+        />
+        <input
+          placeholder="Parent Name"
+          type="text"
+          name="parentName"
+          required
+          class="
+            w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
+            py-3 pl-4 text-[14px]
+            relative
+            pr-[42px]
+          "
+        />
+      </div>
       <InputIcon placeholder="Phone Number" type="tel" name="phone" required pattern="[7-9]{1}[0-9]{9}" max="10"  title="Please enter a 10 digit valid phone no.">
         <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
           <path opacity="0.2" d="M7.37109 8.77484C7.94992 9.97016 8.91648 10.9342 10.1133 11.51C10.2016 11.5518 10.2992 11.5699 10.3966 11.5625C10.494 11.5551 10.5878 11.5225 10.6687 11.4678L12.4266 10.2936C12.5042 10.2409 12.594 10.2088 12.6874 10.2002C12.7809 10.1916 12.875 10.2068 12.9609 10.2444L16.2516 11.6577C16.364 11.7045 16.458 11.7869 16.519 11.8924C16.58 11.9978 16.6046 12.1204 16.5891 12.2412C16.4848 13.0553 16.0874 13.8034 15.4714 14.3457C14.8554 14.8879 14.0629 15.1872 13.2422 15.1873C10.7061 15.1873 8.2738 14.1799 6.48048 12.3865C4.68716 10.5932 3.67969 8.16097 3.67969 5.62484C3.67987 4.80415 3.97909 4.01165 4.52135 3.39562C5.0636 2.7796 5.81175 2.38226 6.62578 2.27796C6.74661 2.26244 6.86918 2.28707 6.97463 2.34806C7.08009 2.40904 7.16257 2.503 7.20937 2.61546L8.62266 5.91312C8.65941 5.99774 8.67478 6.0901 8.66743 6.18206C8.66007 6.27402 8.63021 6.36276 8.58047 6.44046L7.40625 8.2264C7.35397 8.30718 7.32329 8.40002 7.31714 8.49604C7.31098 8.59206 7.32956 8.68805 7.37109 8.77484Z" fill="#6C727F"/>
@@ -119,7 +123,7 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
 
   
       <div class="flex flex-row">
-        <input type="checkbox" class="accent-accent2 cursor-pointer" name="whatsappConsent" id="whatsappConsent" />
+        <input type="checkbox" class="accent-accent cursor-pointer" name="whatsappConsent" id="whatsappConsent" />
         <div class="px-1" />
         <Text type="xs" class="text-sm cursor-pointer">
           <label for="whatsappConsent" class="cursor-pointer flex flex-row items-center">
@@ -134,7 +138,7 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
   </div>
   <div class="w-full success-msg flex flex-col gap-2">
     <div class="p-3" />
-    <Text type="h3" class='text-[32px] text-center'><span class="text-green-600">Thank you</span> for registering!</Text>
+    <Text type="h3" class='text-[32px] text-center'><span class="text-accent">Thank you</span> for registering!</Text>
     <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm">We've received your details and will be in touch soon.</Text>
     <div class="p-3" />
   </div>
@@ -173,9 +177,8 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
   import tippy from 'tippy.js';
 
   const campuses = {
-    cvraman: "CV Raman Nagar",
-    indiranagar: "Indiranagar",
-    mandur: "Mandur",
+    whitefield: 'Whitefield',
+    jakkur: 'Jakkur',
   }
 
   let loading = false
@@ -193,37 +196,27 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
   const selectBranchOptions = document.querySelectorAll('[data-select-parent-id="selectBranch"] [data-value]');
   selectGrade1Container.style.display = 'none';
   selectGrade2Container.style.display = 'none';
-  selectGrade3Container.style.display = 'none';
+  // selectGrade3Container.style.display = 'none';
 
   const updateGradesOptions = (campusName) => {
     document.querySelector('[data-select-parent-id="selectDisabled"]').style.display = 'none';
-    if (campusName === campuses.cvraman) {
+    if (campusName === campuses.whitefield) {
       selectGrade1Container.querySelector('select').required = true
       selectGrade1Container.style.display = 'block';
       selectGrade2Container.style.display = 'none';
-      selectGrade3Container.style.display = 'none';
+      // selectGrade3Container.style.display = 'none';
       // required for form validation
       selectGrade2Container.querySelector('select').required = false
-      selectGrade3Container.querySelector('select').required = false
-    } else if (campusName === campuses.indiranagar) {
+      // selectGrade3Container.querySelector('select').required = false
+    } else if (campusName === campuses.jakkur) {
       selectGrade2Container.querySelector('select').required = true
 
       selectGrade1Container.style.display = 'none';
       selectGrade2Container.style.display = 'block';
-      selectGrade3Container.style.display = 'none';
+      // selectGrade3Container.style.display = 'none';
 
       selectGrade1Container.querySelector('select').required = false
-      selectGrade3Container.querySelector('select').required = false
-    } else if (campusName === campuses.mandur) {
-
-      selectGrade1Container.style.display = 'none';
-      selectGrade2Container.style.display = 'none';
-      selectGrade3Container.style.display = 'block';
-
-      selectGrade1Container.querySelector('select').required = false
-      selectGrade2Container.querySelector('select').required = false
-      selectGrade3Container.querySelector('select').required = true
-
+      // selectGrade3Container.querySelector('select').required = false
     }
   }
 
@@ -247,12 +240,12 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
       
       const grade1 = formData.get('grade1')
       const grade2 = formData.get('grade2')
-      const grade3 = formData.get('grade3')
-      const grade = grade1 || grade2 || grade3
+      // const grade3 = formData.get('grade3')
+      // const grade = grade1 || grade2 || grade3
+      const grade = grade1 || grade2
       formData.append('form-name', 'register-form');
       formData.delete("grade1")
       formData.delete("grade2")
-      formData.delete("grade3")
       formData.append("grade", grade)
 
 
@@ -282,15 +275,15 @@ console.log("apiReponse -->", JSON.stringify(apiResponse.branches, null, 2))
           ...params,
           
         }
-        console.log('fbq -->', fbq)
-        window.fbq('track', 'CompleteRegistration', {
-          value: 0.00,
-          currency: 'INR',
-          em: formData.get('email'),
-          ph: formData.get('phone'),
-          fn: formData.get('parentName'),
-        })
-        window.gtag_report_conversion()
+        // console.log('fbq -->', fbq)
+        // window.fbq('track', 'CompleteRegistration', {
+        //   value: 0.00,
+        //   currency: 'INR',
+        //   em: formData.get('email'),
+        //   ph: formData.get('phone'),
+        //   fn: formData.get('parentName'),
+        // })
+        // window.gtag_report_conversion()
         document.getElementById('register-form-container-desktop').classList.add('form-completed')
       }
     })
